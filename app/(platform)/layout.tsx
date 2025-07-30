@@ -1,46 +1,17 @@
-import { type Metadata } from 'next'
-import localFont from "next/font/local";
 import {
   ClerkProvider,
 } from '@clerk/nextjs'
-import { Geist, Geist_Mono } from 'next/font/google'
-import '../globals.css'
 
-const headingFont = localFont({
-  src: "../../public/fonts/font.ttf",
-})
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
-
-export const metadata: Metadata = {
-  title: '',
-  description: '',
-}
-
-export default function PlatformLayout({
+const PlatformLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode
-}>) {
+}>) => {
   return (
-    <ClerkProvider>
-      <html>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-          </header>
-
-          {children}
-
-        </body>
-      </html>
+    <ClerkProvider afterSignOutUrl={"/"}>
+      {children}
     </ClerkProvider>
   )
 }
+
+export default PlatformLayout
