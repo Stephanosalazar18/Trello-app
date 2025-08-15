@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider afterSignOutUrl={"/login"}>
+    <ClerkProvider >
       <html>
         <body
           className={`${inter.className} antialiased`}>

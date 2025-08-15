@@ -1,3 +1,5 @@
+"use client"
+
 import { Plus } from "lucide-react"
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs"
 
@@ -10,7 +12,7 @@ import { MobileSidebar } from "./mobile-sidebar"
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 w-full h-14 px-16 border-b shadow-sm bg-white flex items-center">
+    <nav className="fixed top-0 w-full h-14 z-20  px-16 border-b shadow-sm bg-white flex items-center">
       <MobileSidebar />
       <div className="flex items-center gap-x-4">
         <div className="hidden md:flex pl-8">

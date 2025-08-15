@@ -17,13 +17,17 @@ export const Info = () => {
   return (
     <div className="flex items-center gap-x-4">
       <div className="w-[60px] h-[60px] relative">
-        <Image
-          fill
-          // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-          src={organization?.imageUrl!}
-          alt="organization"
-          className="rounded-md object-cover"
-        />
+        {organization?.imageUrl ? (
+          <Image
+            src={organization.imageUrl}
+            alt="organization"
+            className="rounded-md object-cover"
+            fill
+          />
+        ) : (
+          // Puedes mostrar un placeholder o nada
+          <div className="w-full h-full bg-gray-200 rounded-md" />
+        )}
       </div>
       <div className="flex flex-col gap-y-1">
         <p className="font-semibold text-xl">
