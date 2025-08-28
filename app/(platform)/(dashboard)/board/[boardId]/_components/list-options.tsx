@@ -17,7 +17,7 @@ import { MoreHorizontal, X } from "lucide-react"
 
 import { useAction } from "@/hooks/use-action"
 import { deleteList } from "@/actions/delete-list"
-import { copyList } from "@/actions/copy-list"
+import { copyList } from "@/actions/copy-card"
 
 
 interface ListOptionsProps {

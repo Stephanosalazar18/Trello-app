@@ -6,6 +6,9 @@ import { db } from "@/lib/db"
 import { revalidatePath } from "next/cache"
 import { createSafeAction } from "@/lib/create-safe-action"
 import { CreateBoard } from "./schema"
+import { createAuditLog } from "@/lib/create-audit-log"
+import { ACTION, ENTITY_TYPE } from "@/lib/enums"
+import { incrementAvailableCount, hasAvailableCount } from "@/lib/org-limit"
 
 // const handler: (data: InputType) => Promise<ReturnType> = async(data) => {
 const handler = async (data: InputType): Promise<ReturnType> => {
@@ -17,6 +20,14 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     return {
       error: "Unauthorized"
     };
+  }
+
+  const canCreate = await hasAvailableCount()
+
+  if (!canCreate) {
+    return {
+      error: "You have reached the maximum number of boards allowed"
+    }
   }
 
   const { title, image } = data
@@ -52,6 +63,16 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         imageLinkHtml,
       }
     })
+
+    await incrementAvailableCount()
+
+    await createAuditLog({
+      entityTitle: board.title,
+      entityId: board.id,
+      entityType: ENTITY_TYPE.BOARD,
+      action: ACTION.CREATE
+            })
+
   } catch (error) {
     console.log(error);
     
