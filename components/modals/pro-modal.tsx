@@ -4,22 +4,40 @@ import { useProModal } from "@/hooks/use-pro-modal"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { useAction } from "@/hooks/use-action"
+import { stripeRedirect } from "@/actions/stripe-redirect"
+import { toast } from "sonner"
 
 
 export const ProModal = () => {
   const proModal = useProModal()
+
+  const { execute, isLoading } = useAction(stripeRedirect, {
+    onSuccess: (data) => {
+      window.location.href = data
+    },
+    onError: (error) => {
+      toast.error(error)
+    }
+  })
+
+  const onClick = () => {
+    execute({
+
+    })
+  }
 
   return (
     <Dialog
       open={proModal.isOpen}
       onOpenChange={proModal.onClose}
     >
-      <DialogContent className="max-w-md p-0 overflow-hidden ">
-        <div className="aspect-video relative flex items-center justify-center">
+      <DialogContent className="max-w-md overflow-hidden p-0">
+        <div className="aspect-video mt-0 relative flex items-center justify-center border rounded-md ">
           <Image
             src="/hero.svg"
             alt="Hero"
-            className="object-cover"
+            className="object-cover w-full scale-125"
             fill
           />
         </div>
@@ -39,6 +57,8 @@ export const ProModal = () => {
             </ul>
           </div>
           <Button
+            disabled={isLoading}
+            onClick={onClick}
             className="w-full"
             variant="primary"
           >
