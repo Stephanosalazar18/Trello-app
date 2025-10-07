@@ -1,32 +1,26 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
-import localFont from 'next/font/local'
-import { cn } from '@/lib/utils'
-
-const headingFont = localFont({
-  src: '../public/fonts/font.ttf',
-})
-
+// Componente de logo para la barra de navegación.
+// Ajustado a un alto estándar (~32px) manteniendo proporción del SVG.
+// Usa width/height para Next/Image y luego forzamos altura con Tailwind.
 const Logo = () => {
   return (
-    <Link href="">
-      <div className="hover:opacity-75 transition item-center gap-x-8 hidden md:flex">
-        <Image
-          src="/logo.svg"
-          alt="Logo"
-          height={30}
-          width={30}
-        />
-        {/* <p className={cn(
-          "text-lg text-neutral-700 pb-1",
-          headingFont.className)}>
-          NNF
-        </p> */}
-
-      </div>
+    <Link
+      href="/"
+      aria-label="Inicio"
+      className="inline-flex items-center group"
+    >
+      <Image
+        src="/logo.svg"
+        alt="Logo"
+        width={120}   // ancho estimado; Next necesita width/height
+        height={120}   // alto base; se sobreescribe visualmente con h-8 si difiere
+        priority
+        className="h-8 w-auto object-contain select-none shrink-0 transition-opacity group-hover:opacity-80"
+      />
     </Link>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

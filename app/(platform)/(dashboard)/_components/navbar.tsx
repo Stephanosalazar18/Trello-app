@@ -12,10 +12,10 @@ import { MobileSidebar } from "./mobile-sidebar"
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 w-full h-14 z-20  px-16 border-b shadow-sm bg-white flex items-center">
+    <nav className="fixed top-0 w-full h-14 z-20 px-8 border-b shadow-sm bg-white flex items-center">
       <MobileSidebar />
-      <div className="flex items-center gap-x-4">
-        <div className="hidden md:flex pl-8">
+      <div className="flex items-center gap-x-12">
+        <div className="hidden md:flex ">
           <Logo />
         </div>
         <FormPopover align="start" side="bottom" sideOffset={18}>
@@ -25,7 +25,7 @@ const Navbar = () => {
         </FormPopover>
 
         <FormPopover>
-          <Button size="sm" className="rounded-sm md:hidden block bg-indigo-500">
+          <Button size="sm" className="rounded-sm md:hidden block ml-4 bg-indigo-500">
             <Plus className="h-4 w-4" />
           </Button>
         </FormPopover>

@@ -16,7 +16,6 @@ export const CardModal = () => {
   const id = useCardModal((state) => state.id)
   const isOpen = useCardModal((state) => state.isOpen)
   const onClose = useCardModal((state) => state.onClose)
-  const onOpen = useCardModal((state) => state.onOpen)
 
   const { data: cardData } = useQuery<CardWithList>({
     queryKey: ["card", id],
@@ -35,13 +34,13 @@ export const CardModal = () => {
       open={isOpen}
       onOpenChange={onClose}
     >
-      <DialogContent>
+      <DialogContent className="max-w-5xl w-full p-6 md:p-8 gap-6">
         {
-        !cardData 
-          ? <Header.Skeleton /> 
-          : <Header data={cardData} />
+          !cardData
+            ? <Header.Skeleton />
+            : <Header data={cardData} />
         }
-        <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
           <div className="col-span-3">
             <div className="w-full space-y-6">
               {

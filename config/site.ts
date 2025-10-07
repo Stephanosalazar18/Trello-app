@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'FNN',
+  name: 'Crafted',
   description: 'Free & Open Source',
   
 }

@@ -5,29 +5,37 @@ const isPublicRoute = createRouteMatcher([
   '/',
   '/sign-in(.*)',
   '/sign-up(.*)',
-  "/api/webhook"
+  '/api/webhook'
 ])
 
-// const isProtectedRoute = createRouteMatcher([
-//   '/dashboard(.*)',
-//   '/organization(.*)',
-// ]);
+const isProtectedRoute = createRouteMatcher([
+  '/dashboard(.*)',
+  '/organization(.*)',
+  '/organization/:id',
+]);
 
 export default clerkMiddleware(async (auth, req) => {
-  // const {userId, orgId, redirectToSignIn } = await auth();
 
+
+  // if (!isPublicRoute(req)) await auth.protect()
+
+  // const {userId, orgId } = await auth.protect();
+  // const {redirectToSignIn} = await auth();
+
+  
   // const url = new URL(req.url);
 
-  // // console.log("REQUEST --------------------------------")
-  // // console.log(req);
-  // // console.log("URL --------------------------------")
-  // // console.log(req.url);
-  // // console.log("NEXT URL --------------------------------")
-  // // console.log(req.nextUrl);
-  // // console.log("--------------------------------")
-  // // console.log("OrgId --------------------------------")
-  // // console.log(orgId);
-  // // console.log("--------------------------------")
+  // console.log("REQUEST --------------------------------")
+  // console.log(req);
+  // console.log("URL --------------------------------")
+  // console.log(req.url);
+  // console.log("NEXT URL --------------------------------")
+  // console.log(req.nextUrl);
+  // console.log("--------------------------------")
+  // console.log("OrgId --------------------------------")
+  // console.log(orgId);
+  // console.log("--------------------------------")
+
 
   // if(userId && isPublicRoute(req)) {
   //   let redirectPath = "/select-org";
@@ -35,14 +43,21 @@ export default clerkMiddleware(async (auth, req) => {
   //   if(orgId) {
   //     redirectPath = `/organization/${orgId}`;
   //   }
-  //   const orgSelection = new URL(redirectPath, url);
+    
+  //   if (req.nextUrl.pathname !== redirectPath) {
+  //     const orgSelection = new URL(redirectPath, url);
+  //     return NextResponse.redirect(orgSelection);
+  //   }
+
   //   // orgSelection.searchParams.set('from', req.nextUrl.pathname)
-  //   return NextResponse.redirect(orgSelection);
+  //   // return NextResponse.redirect(orgSelection);
   // }
 
   // if(!userId && !isPublicRoute(req)) {
   //   return redirectToSignIn({returnBackUrl: req.url});  
   // }
+
+  
 
   // if (userId && !orgId && req.nextUrl.pathname !== "/select-org") {
   //   const orgSelection = new URL("/select-org", req.url);

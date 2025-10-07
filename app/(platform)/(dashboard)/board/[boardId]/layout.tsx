@@ -48,12 +48,12 @@ const BoardIdLayout = async ({
     <div className="relative min-h-screen w-full">
 
       <div
-        className="fixed inset-0 -z-10 bg-no-repeat bg-cover bg-center"
+        className="fixed inset-0 -z-10 bg-no-repeat bg-cover bg-center brightness-90"
         style={{ backgroundImage: `url(${board.imageFullUrl})` }}
         aria-hidden="true"
       />
-      <BoardNavbar data={board} /> 
-      <div className="absolute inset-0 bg-black/10" />
+      <BoardNavbar data={board} />
+      <div className="absolute " />
       <main className="relative pt-28 h-full">
         {children}
       </main>

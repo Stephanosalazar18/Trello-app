@@ -15,16 +15,24 @@ interface BoardListProps {
 }
 
 export const BoardList = async ({ organizationId }: BoardListProps) => {
-  const boards = await db.board.findMany({
-    where: {
-      orgId: organizationId
-    },
-    orderBy: {
-      createdAt: "desc"
-    }
-  })
+  let boards: Awaited<ReturnType<typeof db.board.findMany>> = []
+  let availableCount = 0
+  let loadError: string | null = null
 
-  const availableCount = await getAvailableCount()
+  try {
+    boards = await db.board.findMany({
+      where: { orgId: organizationId },
+      orderBy: { createdAt: "desc" }
+    })
+  } catch (e) {
+    loadError = `Error cargando boards: ${(e as Error).message}`
+  }
+
+  try {
+    availableCount = await getAvailableCount()
+  } catch (e) {
+    if (!loadError) loadError = `Error obteniendo límite: ${(e as Error).message}`
+  }
 
 
   return (
@@ -33,6 +41,11 @@ export const BoardList = async ({ organizationId }: BoardListProps) => {
         <User2 className="w-6 h-6 mr-2" />
         Your boards
       </div>
+      {loadError && (
+        <div className="text-sm text-red-600 bg-red-50 border border-red-200 rounded p-2">
+          {loadError}
+        </div>
+      )}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {
           boards.map((board) => (
@@ -51,7 +64,7 @@ export const BoardList = async ({ organizationId }: BoardListProps) => {
             </Link>
           ))
         }
-        <FormPopover sideOffset={10} side="right">
+        <FormPopover sideOffset={10} side="right" align="center">
           <div
             role="button"
             className="aspect-video relative h-full w-full bg-muted rounded-sm flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition"

@@ -8,6 +8,7 @@ export async function GET(
 ) {
   try {
     const { userId, orgId } = await auth()
+    
 
     if (!userId || !orgId) {
       return new NextResponse("Unauthorized", {status: 401})

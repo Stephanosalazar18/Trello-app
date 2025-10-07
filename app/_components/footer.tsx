@@ -5,10 +5,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='fixed bottom-0 w-full p-4 px-16 border-b flex  bg-slate-100'>
-      <div className='md:max-w-screen-2xl mx-auto flex items-center w-full justify-between'>
+    <div className='fixed bottom-0 w-full p-4 px-16 border-b flex shadow-sm bg-white/85 backdrop-blur'>
+      <div className='mx-auto w-full max-w-screen-2xl flex items-center justify-between'>
         <Logo />
-        <div className='space-x-4 md:block md:w-auto flex items-center justify-between w-full'>
+        <div className='flex items-center space-x-3 md:space-x-4'>
           <Button size="sm" variant="ghost" asChild>
             <Link href="/sign-in">
               Privacy Policy
