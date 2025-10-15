@@ -1,27 +1,22 @@
 
 <div align="center">
-	<img src="/logo.svg" alt="Trello App Logo" width="120" />
   
-	<h1 align="center">Trello App</h1>
+<h1 align="center">Trello App</h1>
+<p align="center">
+	<b>Modern Kanban board for teams</b><br>
+	<i>Built with Next.js, React, TypeScript, Prisma, Clerk, Stripe & TailwindCSS</i>
+</p>
 	<p align="center">
-		<b>Modern Kanban board for teams</b><br>
-		<i>Built with Next.js, React, TypeScript, Prisma, Clerk, Stripe & TailwindCSS</i>
-	</p>
-	<p align="center">
-		<img src="https://img.shields.io/badge/Next.js-14-blue?logo=nextdotjs" />
-		<img src="https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript" />
-		<img src="https://img.shields.io/badge/TailwindCSS-4.x-06B6D4?logo=tailwindcss" />
-		<img src="https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma" />
-		<img src="https://img.shields.io/badge/Clerk-Auth-3B82F6?logo=clerk" />
-		<img src="https://img.shields.io/badge/Stripe-Subscriptions-635BFF?logo=stripe" />
-	</p>
+	<img src="https://img.shields.io/badge/Next.js-14-blue?logo=nextdotjs" />
+	<img src="https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript" />
+	<img src="https://img.shields.io/badge/TailwindCSS-4.x-06B6D4?logo=tailwindcss" />
+	<img src="https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma" />
+	<img src="https://img.shields.io/badge/Clerk-Auth-3B82F6?logo=clerk" />
+	<img src="https://img.shields.io/badge/Stripe-Subscriptions-635BFF?logo=stripe" />
+	</p>  
 </div>
 
 ---
-
-<div align="center">
-	<img src="/slide-img-1.jpg" alt="Main Screenshot" width="700" />
-</div>
 
 ## 🚀 Descripción
 
@@ -57,10 +52,10 @@ Trello App es una aplicación web moderna para gestión de tareas y proyectos, i
 ## 📸 Imágenes
 
 <div align="center">
-		<img src="/featured-1-3.jpg" alt="Screenshot 2" width="700" />
+		<img src="/assets/featured-1-3.jpg" alt="Screenshot 2" width="700" />
 		<br>
-		<img src="/featured-1.jpg" alt="Thumb 1" width="340" />
-		<video src="/featured-1.mp4" width="340" controls loop muted poster="/featured-1.jpg" style="border-radius:12px;margin:0 8px;box-shadow:0 2px 8px #0002;">
+		<img src="/assets/featured-1.jpg" alt="Thumb 1" width="340" />
+		<video src="/assets/featured-1.mp4" width="340" controls loop muted poster="/featured-1.jpg" style="border-radius:12px;margin:0 8px;box-shadow:0 2px 8px #0002;">
 			Tu navegador no soporta video embebido.
 		</video>
 </div>
@@ -96,7 +91,6 @@ Trello App es una aplicación web moderna para gestión de tareas y proyectos, i
 ---
 
 <div align="center">
-	<img src="/logo.svg" alt="Logo" width="60" />
 	<br>
 	<b>Crafted by Stephano Salazar · 2025</b>
 </div>
