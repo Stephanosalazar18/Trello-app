@@ -52,12 +52,12 @@ Trello App es una aplicación web moderna para gestión de tareas y proyectos, i
 ## 📸 Imágenes
 
 <div align="center">
-		<img src="/assets/featured-1-3.jpg" alt="Screenshot 2" width="700" />
-		<br>
-		<img src="/assets/featured-1.jpg" alt="Thumb 1" width="340" />
-		<video src="/assets/featured-1.mp4" width="340" controls loop muted poster="/featured-1.jpg" style="border-radius:12px;margin:0 8px;box-shadow:0 2px 8px #0002;">
-			Tu navegador no soporta video embebido.
-		</video>
+	<img src="/public/assets/featured-1-3.jpg" alt="Screenshot 2" width="700" />
+	<br>
+	<img src="/public/assets/featured-1.jpg" alt="Thumb 1" width="340" />
+	<video src="/public/assets/featured-1.mp4" width="340" controls loop muted poster="/featured-1.jpg" style="border-radius:12px;margin:08px;box-shadow:0 2px 8px #0002;">
+		Tu navegador no soporta video embebido.
+	</video>
 </div>
 
 ## ⚡ Instalación y uso
