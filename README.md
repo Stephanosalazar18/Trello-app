@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+<div align="center">
+	<img src="/logo.svg" alt="Trello App Logo" width="120" />
+  
+	<h1 align="center">Trello App</h1>
+	<p align="center">
+		<b>Modern Kanban board for teams</b><br>
+		<i>Built with Next.js, React, TypeScript, Prisma, Clerk, Stripe & TailwindCSS</i>
+	</p>
+	<p align="center">
+		<img src="https://img.shields.io/badge/Next.js-14-blue?logo=nextdotjs" />
+		<img src="https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript" />
+		<img src="https://img.shields.io/badge/TailwindCSS-4.x-06B6D4?logo=tailwindcss" />
+		<img src="https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma" />
+		<img src="https://img.shields.io/badge/Clerk-Auth-3B82F6?logo=clerk" />
+		<img src="https://img.shields.io/badge/Stripe-Subscriptions-635BFF?logo=stripe" />
+	</p>
+</div>
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<div align="center">
+	<img src="/slide-img-1.jpg" alt="Main Screenshot" width="700" />
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Descripción
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Trello App es una aplicación web moderna para gestión de tareas y proyectos, inspirada en el clásico tablero Kanban. Permite crear organizaciones, tableros, listas y tarjetas, con soporte para drag & drop, suscripciones premium, límites por plan y una interfaz responsiva y atractiva.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tecnologías
 
-## Learn More
+- **Next.js 14 (App Router)**
+- **React 18**
+- **TypeScript**
+- **Prisma ORM & PostgreSQL**
+- **Clerk (autenticación y organizaciones)**
+- **Stripe (suscripciones)**
+- **TailwindCSS**
+- **Zod**
+- **React Hook Form**
+- **TanStack Query**
+- **Server Actions**
+- **Unsplash API**
+- **Lucide Icons**
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Características
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Gestión de organizaciones y tableros
+- Listas y tarjetas con drag & drop
+- Suscripciones premium (Stripe)
+- Límite de tableros por plan
+- Actividad y logs de auditoría
+- UI responsiva y moderna
+- Autenticación y roles con Clerk
+- Imágenes de Unsplash para tableros
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📸 Imágenes
 
-## Deploy on Vercel
+<div align="center">
+		<img src="/featured-1-3.jpg" alt="Screenshot 2" width="700" />
+		<br>
+		<img src="/featured-1.jpg" alt="Thumb 1" width="340" />
+		<video src="/featured-1.mp4" width="340" controls loop muted poster="/featured-1.jpg" style="border-radius:12px;margin:0 8px;box-shadow:0 2px 8px #0002;">
+			Tu navegador no soporta video embebido.
+		</video>
+</div>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚡ Instalación y uso
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clona el repositorio:
+	 ```bash
+	 git clone https://github.com/Stephanosalazar18/Trello-app.git
+	 cd Trello-app
+	 ```
+2. Instala dependencias:
+	 ```bash
+	 npm install
+	 # o
+	 yarn install
+	 ```
+3. Configura las variables de entorno en `.env.local`:
+	 - `DATABASE_URL` (Postgres)
+	 - `CLERK_SECRET_KEY`, `CLERK_PUBLISHABLE_KEY`
+	 - `STRIPE_SECRET_KEY`, etc.
+4. Ejecuta migraciones y genera Prisma Client:
+	 ```bash
+	 npx prisma generate
+	 npx prisma db push
+	 ```
+5. Inicia el servidor de desarrollo:
+	 ```bash
+	 npm run dev
+	 ```
+6. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+---
+
+<div align="center">
+	<img src="/logo.svg" alt="Logo" width="60" />
+	<br>
+	<b>Crafted by Stephano Salazar · 2025</b>
+</div>
